@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PetVibe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Fredoka+One&family=Nunito:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --coral:#E8472A;--orange:#F28C38;--yellow:#F5C842;
+  --purple:#7B5EA7;--cream:#FDF6EC;--black:#1A1208;--white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--black)}
+img{width:100%;display:block;object-fit:cover}
+
+/* NAV */
+nav[aria-label] {
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;
+  padding:20px 60px;background:#fff;border-bottom:3px solid var(--black)
+}
+.nav-logo{font-family:'Boogaloo',cursive;font-size:34px}
+.nav-logo em{color:var(--coral);font-style:normal}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{
+  text-decoration:none;color:var(--black);font-weight:700;transition:.2s;
+}
+.nav-links a:hover,.nav-links a:focus{color:var(--coral);text-decoration:underline;}
+.nbtn, .btn{
+  padding:10px 18px;border-radius:30px;text-decoration:none;font-weight:700;
+  background:var(--coral);color:#fff;border:none;cursor:pointer;
+  transition:background .2s, color .2s;
+  display:inline-block;
+}
+.nbtn.fill:hover, .btn-primary:hover, .nbtn.fill:focus, .btn-primary:focus{background:var(--orange);}
+.nbtn{font-size:16px;}
+.nbtn:focus{outline:2px solid var(--black);}
+nav .nbtn {margin-left:24px;}
+
+/* HERO */
+.hero{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  padding:80px;
+  gap:60px;
+  align-items:center;
+  background:#fff;
+}
+.hero h1{
+  font-family:'Boogaloo',cursive;
+  font-size:88px;
+  line-height:0.95;
+  margin-bottom:20px;
+}
+.hero h1 span{color:var(--coral)}
+.hero p{font-size:18px;color:#555;margin-bottom:25px}
+.btn{
+  padding:15px 30px;
+  border-radius:14px;
+  font-weight:800;
+  margin-right:10px;
+  font-size:18px;
+}
+.btn-primary{background:var(--coral);color:#fff;}
+.btn-primary:focus{outline:2px solid var(--orange);}
+.hero-images{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+.hero-images img{
+  border-radius:20px;
+  height:300px;
+}
+
+.section{
+  padding:90px 80px;
+}
+.section h2{
+  font-family:'Boogaloo',cursive;
+  font-size:58px;
+  margin-bottom:40px;
+}
+
+.products-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+.card{
+  background:#fff;
+  padding:14px;
+  border-radius:18px;
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+.card img{
+  height:280px;
+  border-radius:14px;
+  margin-bottom:12px;
+}
+.card h3{
+  font-size:18px;
+  margin-bottom:8px;
+}
+.price{
+  font-size:24px;
+  font-weight:900;
+  color:var(--coral);
+}
+
+.about{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+  background:var(--purple);
+  color:#fff;
+  padding:90px 80px;
+}
+.about h2{
+  font-family:'Boogaloo',cursive;
+  font-size:58px;
+}
+.about img{
+  height:420px;
+  border-radius:20px;
+}
+
+.review-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+.review{
+  background:#fff;
+  padding:14px;
+  border-radius:18px;
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+.review img{
+  height:260px;
+  border-radius:14px;
+  margin-bottom:12px;
+}
+
+footer{
+  padding:40px 80px;
+  background:#111;
+  color:#fff;
+  text-align:center;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 1200px) {
+  .hero{padding:40px}
+  .section{padding:60px 20px}
+  .about{padding:60px 20px}
+  footer{padding:40px 20px;}
+}
+@media (max-width: 900px) {
+  nav[aria-label]{padding:20px 10px;}
+  .hero, .about{
+    grid-template-columns:1fr;
+    gap:30px;
+    padding:30px 10px;
+  }
+  .section{padding:30px 10px;}
+  .section h2, .about h2{font-size:38px;}
+  .hero h1{font-size:60px;}
+  .products-grid{grid-template-columns:1fr 1fr;}
+  .hero-images img, .about img{height:220px;}
+  .review-grid{grid-template-columns:1fr;}
+}
+@media (max-width: 600px) {
+  nav[aria-label]{padding:10px 5px;flex-direction:column;gap:12px;}
+  .nav-logo{font-size:28px;}
+  .nav-links{gap:10px;}
+  .about, .hero, .section{padding:16px 2vw;}
+  .about img, .hero-images img{height:140px;}
+  .hero h1{font-size:36px;}
+  .products-grid{grid-template-columns:1fr;}
+  .card img{height:160px;}
+  .about h2{font-size:25px;}
+  .section h2{font-size:28px;}
+}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main site navigation">
+  <div class="nav-logo">Pet<em>Vibe</em></div>
+  <ul class="nav-links">
+    <li><a href="#" tabindex="0">Home</a></li>
+    <li><a href="#" tabindex="0">Shop</a></li>
+    <li><a href="#" tabindex="0">Reviews</a></li>
+    <li><a href="#" tabindex="0">About</a></li>
+  </ul>
+  <button class="nbtn fill" type="button" aria-label="Design your custom item">Design Yours</button>
+</nav>
+
+<main>
+<section class="hero">
+  <div>
+    <h1>Wear your pet's <span>soul.</span></h1>
+    <p>Your pet photo becomes a hand-embroidered fashion piece you'll treasure forever.</p>
+    <button class="btn btn-primary" type="button" aria-label="Design your custom fashion">Design Yours</button>
+  </div>
+  <div class="hero-images">
+    <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=700&q=80" 
+      alt="A cozy scene with a dog in a hoodie" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1595433562696-5e3c3c6bff5d?auto=format&fit=crop&w=700&q=80"
+      alt="Person showing off their pet-embroidered clothing" loading="lazy">
+  </div>
+</section>
+
+<section class="section" id="shop">
+  <h2>Best Sellers.</h2>
+  <div class="products-grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=500&q=80" 
+        alt="Dog Portrait Tee, custom photo embroidery">
+      <h3>Dog Portrait Tee</h3>
+      <div class="price">$49</div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=500&q=80"
+        alt="Cat Hoodie, custom embroidery of your pet">
+      <h3>Cat Hoodie</h3>
+      <div class="price">$69</div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1601758173924-196c3f0d6c5f?auto=format&fit=crop&w=500&q=80"
+        alt="Pet Sweatshirt, hand-stitched for pet lovers">
+      <h3>Pet Sweatshirt</h3>
+      <div class="price">$59</div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=500&q=80"
+        alt="Matching Bundle - for people and their pets">
+      <h3>Matching Bundle</h3>
+      <div class="price">$79</div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <img src="https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?auto=format&fit=crop&w=700&q=80"
+    alt="Artisan at work, hand-embroidering a pet portrait" loading="lazy">
+  <div>
+    <h2>Our story.</h2>
+    <p>
+      PetVibe creates premium embroidered fashion for pet lovers.
+      Every design is made with care, crafted to celebrate the bond between you and your pet.
+    </p>
+  </div>
+</section>
+
+<section class="section" id="reviews">
+  <h2>Social Wall.</h2>
+  <div class="review-grid">
+    <div class="review">
+      <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=500&q=80"
+        alt="Happy customer shows off hoodie with pet design" loading="lazy">
+      <p>"Absolutely in love with my embroidered hoodie!"</p>
+    </div>
+    <div class="review">
+      <img src="https://images.unsplash.com/photo-1595433707802-62b37c3f9d3b?auto=format&fit=crop&w=500&q=80"
+        alt="Cat owner holds up their hoodie with pet embroidery" loading="lazy">
+      <p>"The detail is amazing and my cat looks adorable."</p>
+    </div>
+    <div class="review">
+      <img src="https://images.unsplash.com/photo-1590086782792-42dd2350140d?auto=format&fit=crop&w=500&q=80"
+        alt="Best custom gift - smiling pet parent" loading="lazy">
+      <p>"Best custom gift I've ever bought."</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  © 2026 PetVibe. All rights reserved*
